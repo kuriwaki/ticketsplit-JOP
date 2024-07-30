@@ -1,0 +1,59 @@
+---
+title: "Replication for 'Ticket Splitting in a Nationalized Era'"
+author: "Shiro Kuriwaki"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This repository is a replication archive for the manuscript, "Ticket Splitting in a Nationalized Era". 
+
+Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a Github version (<https://github.com/kuriwaki/ticketsplit-JOP>) are available. 
+
+* Dataverse version: has code _and_ data, not public until reviewed
+* Github: tracks only code, currenlty public.
+
+## How to Replicate 
+
+We strongly recommend downloading this entire repository and opening it as __a RStudio Project__.
+This will activate the package manager renv easily. 
+
+## Structure
+
+This repository has the following scripts. The name of the file indicates the figure / table that it reproduces.
+For example, `02_fig-02-B5_toipline.R` indicates that it creates Figure 2 and Figure B5.
+
+```{r, echo=FALSE}
+fs::dir_ls(".", regexp = ".R$")
+```
+All scripts default to the project directory "ticketsplit-JOP" for its working directory.
+
+
+## Packages and Dependencies
+
+This repository uses R. It uses the renv package <https://rstudio.github.io/renv/> to manage package versions. 
+The `renv.lock` file encodes all the  necessary dependencies. 
+Opening the project in Rstudio Projects will automatically register the lockfile (from the `.Rprofile`), and Rstudio Projects will ask if you want to install missing packages. 
+You can install the missing packages using `renv::restore()`. 
+See <https://rstudio.github.io/renv/articles/renv.html> for more help on how to start this. 
+
+For reference, here are the package dependencies across all scripts, from most used to least.
+
+
+```{r, echo=FALSE, message=FALSE}
+renv::dependencies() |> 
+  dplyr::as_tibble() |> 
+  dplyr::count(Package, sort = TRUE) |> 
+  dplyr::pull(Package)
+```
+
+
+All packages are on CRAN except `ticketsplitJOPpkg`, which is a bundle of extra functions specific to this repository. 
+It is available at <https://github.com/kuriwaki/ticketsplitJOPpkg> and can be installed with 
+
+```{r, eval=FALSE}
+remotes::install_github("kuriwaki/ticketsplitJOPpkg")
+```
+
