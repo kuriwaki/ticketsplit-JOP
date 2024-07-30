@@ -17,7 +17,7 @@ Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a Github ver
 We strongly recommend downloading this entire repository and opening it as __a RStudio Project__.
 This will activate the package manager renv easily. 
 
-For convenience, `00_replicate-ALL.R` loops around all R scripts and executes them indpendently. 
+For convenience, `00_replicate-ALL.R` loops around all R scripts and executes them independently. 
 
 ## Structure
 

@@ -16,7 +16,7 @@ as **a RStudio Project**. This will activate the package manager renv
 easily.
 
 For convenience, `00_replicate-ALL.R` loops around all R scripts and
-executes them indpendently.
+executes them independently.
 
 ## Structure
 
