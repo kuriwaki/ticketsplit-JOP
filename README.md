@@ -7,10 +7,7 @@ Splitting in a Nationalized Era”.
 
 Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a
 Github version (<https://github.com/kuriwaki/ticketsplit-JOP>) are
-available.
-
-- Dataverse version: has code *and* data, not public until reviewed
-- Github: tracks only code, currenlty public.
+available. The dataverse version is not public until reviewed.
 
 ## How to Replicate
 
@@ -42,6 +39,15 @@ B5.
 
 All scripts default to the project directory “ticketsplit-JOP” for its
 working directory.
+
+## Datasets
+
+The data in this archive include standard `csv` files, Stata `dta` files
+(which should be read in with `.dta`) and parquet files (`.parquet`).
+The parquet files are compact storage formats for large datasets and
+allows the models to be run quickly. It can be loaded with the `arrow`
+package using the `open_dataset()` function. For a reference, see
+<https://r4ds.hadley.nz/arrow>.
 
 ## Packages and Dependencies
 

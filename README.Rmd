@@ -29,6 +29,10 @@ fs::dir_ls(".", regexp = ".R$")
 ```
 All scripts default to the project directory "ticketsplit-JOP" for its working directory.
 
+## Datasets
+
+The data in this archive include standard `csv` files, Stata `dta` files (which should be read in with `.dta`) and parquet files (`.parquet`). 
+The parquet files are compact storage formats for large datasets and allows the models to be run quickly. It can be loaded with the `arrow` package using the `open_dataset()` function. For a reference, see <https://r4ds.hadley.nz/arrow>. 
 
 ## Packages and Dependencies
 
