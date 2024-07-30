@@ -11,8 +11,8 @@ cd_prox <- read_dta("data/hist-svy_cd-2020.dta") |>
 # Summarize to districts ---
 by_cd <- cc_fmt |>
   filter(year == 2020) |>
-  semi_join(cd_contest, by = c("year", "st", "cd")) |>
-  select(year, case_id, state, st, matches("cd"), split, weight) |>
+  semi_join(cd_contest, by = c("year", "cd")) |>
+  select(year, case_id, matches("cd"), split, weight) |>
   filter(!is.na(weight)) |>
   summarize(
     split = weighted.mean(split, weight, na.rm = TRUE),

@@ -10,15 +10,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This repository is a replication archive for the manuscript, "Ticket Splitting in a Nationalized Era". 
 
-Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a Github version (<https://github.com/kuriwaki/ticketsplit-JOP>) are available. 
-
-* Dataverse version: has code _and_ data, not public until reviewed
-* Github: tracks only code, currenlty public.
+Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a Github version (<https://github.com/kuriwaki/ticketsplit-JOP>) are available. The dataverse version is not public until reviewed.
 
 ## How to Replicate 
 
 We strongly recommend downloading this entire repository and opening it as __a RStudio Project__.
 This will activate the package manager renv easily. 
+
+For convenience, `00_replicate-ALL.R` loops around all R scripts and executes them indpendently. 
 
 ## Structure
 
@@ -33,7 +32,7 @@ All scripts default to the project directory "ticketsplit-JOP" for its working d
 
 ## Packages and Dependencies
 
-This repository uses R. It uses the renv package <https://rstudio.github.io/renv/> to manage package versions. 
+This repository uses R. It uses the renv package (<https://rstudio.github.io/renv/>) to manage package versions. 
 The `renv.lock` file encodes all the  necessary dependencies. 
 Opening the project in Rstudio Projects will automatically register the lockfile (from the `.Rprofile`), and Rstudio Projects will ask if you want to install missing packages. 
 You can install the missing packages using `renv::restore()`. 

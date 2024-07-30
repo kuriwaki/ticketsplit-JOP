@@ -18,6 +18,9 @@ We strongly recommend downloading this entire repository and opening it
 as **a RStudio Project**. This will activate the package manager renv
 easily.
 
+For convenience, `00_replicate-ALL.R` loops around all R scripts and
+executes them indpendently.
+
 ## Structure
 
 This repository has the following scripts. The name of the file
@@ -43,7 +46,7 @@ working directory.
 ## Packages and Dependencies
 
 This repository uses R. It uses the renv package
-<https://rstudio.github.io/renv/> to manage package versions. The
+(<https://rstudio.github.io/renv/>) to manage package versions. The
 `renv.lock` file encodes all the necessary dependencies. Opening the
 project in Rstudio Projects will automatically register the lockfile
 (from the `.Rprofile`), and Rstudio Projects will ask if you want to

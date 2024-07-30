@@ -41,11 +41,12 @@ inc_tbl <- inc_fracs |>
   arrange(desc(N))
 
 # for printing ---
-inc_tbl |>
-  gt() |>
-  fmt_integer(N) |>
-  fmt_number(c(inc, chall, open), decimals = 2) |>
-  tab_spanner("Contests with an incumbent", columns = inc:diff1) |>
-  tab_spanner("Open contests", columns = open) |>
-  gt::as_latex() |>
-  cat()
+## uncomment to see tex
+# inc_tbl |>
+#   gt() |>
+#   fmt_integer(N) |>
+#   fmt_number(c(inc, chall, open), decimals = 2) |>
+#   tab_spanner("Contests with an incumbent", columns = inc:diff1) |>
+#   tab_spanner("Open contests", columns = open) |>
+#   gt::as_latex() |>
+#   cat()
