@@ -8,11 +8,5 @@ renv/staging
 
 .DS_Store
 
-*.csv
-*.csv.gz
-*.dta
-*.parquet
-*.rds
-
 *.pdf
 *.png
