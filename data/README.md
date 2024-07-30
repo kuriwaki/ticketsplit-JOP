@@ -106,6 +106,17 @@ rate for State House.
   pairs of contests
 - `n`: Number of voters
 
+`hist-elecs_by-office.csv` is a dataset of historical elections.
+Appendix A6. Data collected by David Lublin, Carl Klarner, and
+supplemented by myself. The table bins the contest-level dataset into
+bins.
+
+- `office`: Office examined
+- `yr_bin`: The year range covered
+- `n`: Number of contests
+- `pct_R`, `pct_D`: Percent won by Republican, Democrat
+- `mar_R`: Win margin of Republican
+
 # Stata dta files
 
 .dta files are also for one-off uses of survey data. Sources: ANES and
