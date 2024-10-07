@@ -12,13 +12,18 @@ available. The dataverse version is not public until reviewed.
 ## How to Replicate
 
 We strongly recommend downloading this entire repository and opening it
-as **a RStudio Project**. This will activate the package manager renv
-easily.
+as **a RStudio Project** (<https://posit.co/download/rstudio-desktop/>).
+This will activate the package manager **renv** easily. Run
+`renv::restore()` to download the necessary packages and their versions
+in one step.
 
-For convenience, `00_replicate-ALL.R` loops around all R scripts and
-executes them independently.
+Then, inside the Rstudio and renv environment, replicators can run the
+master script `00_replicate-ALL.R` or run each R script.
 
-## Structure
+See the package and dependencies section for the replication
+environment.
+
+## Project Structure
 
 This repository has the following scripts. The name of the file
 indicates the figure / table that it reproduces. For example,
@@ -49,7 +54,7 @@ allows the models to be run quickly. It can be loaded with the `arrow`
 package using the `open_dataset()` function. For a reference, see
 <https://r4ds.hadley.nz/arrow>.
 
-## Packages and Dependencies
+## Packages and Dependencies (renv)
 
 This repository uses R. It uses the renv package
 (<https://rstudio.github.io/renv/>) to manage package versions. The
@@ -65,15 +70,10 @@ For reference, here are the package dependencies across all scripts,
 from most used to least.
 
     ## Finding R package dependencies ... Done!
-
-    ##  [1] "tidyverse"         "scales"            "fs"               
-    ##  [4] "ticketsplitJOPpkg" "arrow"             "patchwork"        
-    ##  [7] "glue"              "haven"             "fixest"           
-    ## [10] "ggtext"            "broom"             "ggrepel"          
-    ## [13] "kableExtra"        "lemon"             "marginaleffects"  
-    ## [16] "modelsummary"      "renv"              "cli"              
-    ## [19] "dplyr"             "gt"                "knitr"            
-    ## [22] "rmarkdown"         "stringi"
+    ## c("tidyverse", "scales", "fs", "ticketsplitJOPpkg", "arrow", 
+    ## "patchwork", "glue", "haven", "fixest", "ggtext", "broom", "ggrepel", 
+    ## "kableExtra", "lemon", "marginaleffects", "modelsummary", "renv", 
+    ## "rmarkdown", "cli", "dplyr", "gt", "knitr", "stringi")
 
 All packages are on CRAN except `ticketsplitJOPpkg`, which is a bundle
 of extra functions specific to this repository. It is available at

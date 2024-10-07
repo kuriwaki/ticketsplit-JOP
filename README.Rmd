@@ -14,12 +14,15 @@ Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a Github ver
 
 ## How to Replicate 
 
-We strongly recommend downloading this entire repository and opening it as __a RStudio Project__.
-This will activate the package manager renv easily. 
+We strongly recommend downloading this entire repository and opening it as __a RStudio Project__ (<https://posit.co/download/rstudio-desktop/>).
+This will activate the package manager **renv** easily. Run `renv::restore()` to download the necessary packages and their versions in one step.  
 
-For convenience, `00_replicate-ALL.R` loops around all R scripts and executes them independently. 
+Then, inside the Rstudio and renv environment, replicators can run the master script `00_replicate-ALL.R` or run each R script. 
 
-## Structure
+See the package and dependencies section for the replication environment.
+
+
+## Project Structure
 
 This repository has the following scripts. The name of the file indicates the figure / table that it reproduces.
 For example, `02_fig-02-B5_toipline.R` indicates that it creates Figure 2 and Figure B5.
@@ -34,7 +37,7 @@ All scripts default to the project directory "ticketsplit-JOP" for its working d
 The data in this archive include standard `csv` files, Stata `dta` files (which should be read in with `.dta`) and parquet files (`.parquet`). 
 The parquet files are compact storage formats for large datasets and allows the models to be run quickly. It can be loaded with the `arrow` package using the `open_dataset()` function. For a reference, see <https://r4ds.hadley.nz/arrow>. 
 
-## Packages and Dependencies
+## Packages and Dependencies (renv)
 
 This repository uses R. It uses the renv package (<https://rstudio.github.io/renv/>) to manage package versions. 
 The `renv.lock` file encodes all the  necessary dependencies. 
@@ -49,7 +52,8 @@ For reference, here are the package dependencies across all scripts, from most u
 renv::dependencies() |> 
   dplyr::as_tibble() |> 
   dplyr::count(Package, sort = TRUE) |> 
-  dplyr::pull(Package)
+  dplyr::pull(Package) |> 
+  dput()
 ```
 
 

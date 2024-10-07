@@ -1,6 +1,7 @@
 library(cli)
 library(fs)
 
+# get lists of scripts
 scripts <- dir_ls(".", regexp = ".R$") |>
   setdiff("00_replicate-ALL.R")
 
