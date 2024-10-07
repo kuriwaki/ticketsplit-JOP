@@ -1,7 +1,9 @@
 ---
-title: "Data Codebook"
+title: "Data Codebook for 'Ticket Splitting in a Nationalized Era'"
 output: github_document
 ---
+
+#### Shiro Kuriwaki
 
 Here is an overview of the datasets and their variable names:
 

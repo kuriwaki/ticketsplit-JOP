@@ -1,5 +1,7 @@
-Data Codebook
+Data Codebook for ‘Ticket Splitting in a Nationalized Era’
 ================
+
+#### Shiro Kuriwaki
 
 Here is an overview of the datasets and their variable names:
 
