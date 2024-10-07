@@ -13,21 +13,25 @@ available. The dataverse version is not public until reviewed.
 
 We strongly recommend downloading this entire repository and opening it
 as **a RStudio Project** (<https://posit.co/download/rstudio-desktop/>).
-This will activate the package manager **renv** easily. Run
-`renv::restore()` to download the necessary packages and their versions
-in one step.
+This will activate the package manager **renv** easily. Specifically:
 
-Then, inside the Rstudio and renv environment, replicators can run the
-master script `00_replicate-ALL.R` or run each R script.
+1.  In RStudio, create a new Rstudio project from this repo
+    (<https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects>)
+    and select Create from `Version Control` \> `Git`, then enter this
+    URL <https://github.com/kuriwaki/ticketsplit-JOP>.
+2.  A new Project should open. Run `renv::restore()` to download the
+    necessary packages and their versions in one step.  
+3.  Then, inside the Rstudio and renv environment, replicators can run
+    the master script `00_replicate-ALL.R` or run each R script.
 
-See the package and dependencies section for the replication
+See the “package and dependencies” section for more on replication
 environment.
 
 ## Project Structure
 
 This repository has the following scripts. The name of the file
 indicates the figure / table that it reproduces. For example,
-`02_fig-02-B5_toipline.R` indicates that it creates Figure 2 and Figure
+`02_fig-02-B5_topline.R` indicates that it creates Figure 2 and Figure
 B5.
 
     ## 00_replicate-ALL.R                 01_fig-01_historical-ticketsplit.R 
