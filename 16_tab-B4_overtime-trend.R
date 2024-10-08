@@ -19,36 +19,29 @@ tab_reg <- tab |>
     time = (year - 12) / 2
   )
 
-lm1 <- lm(hsplt ~ time + midterm, tab_reg)
-lm2 <- feols(hsplt ~ time + midterm | USH_dist, tab_reg)
-lm3 <- feols(hsplt ~ time + midterm | HOU_dist, tab_reg)
+lm2 <- feols(hstraight ~ time + midterm | USH_dist, tab_reg)
+lm3 <- feols(hstraight ~ time + midterm | HOU_dist, tab_reg)
 
-tab_reg |>
+# summary stats
+ss <- tab_reg |>
   summarize(
-    mean = mean(hsplt),
-    sd = sd(hsplt),
+    mean = format(mean(hstraight), digits = 2),
+    sd   = format(sd(hstraight), digits = 2),
   )
 
+ss_tibb <- tribble(
+  ~term, ~mod2, ~mod3,
+  "Fixed Effects by", "Congressional District", "House District",
+  "Avg. of Outcome", ss$mean[1], ss$mean[1],
+  "Std. Dev of Outcome", ss$sd[1], ss$sd[1])
+
+# modelsummary
 modelsummary(list(lm2, lm3),
   fmt = 3,
   coef_map = c(time = "Time (2-Year Increment)", midtermTRUE = "Midterm Year"),
   stars = c("*" = 0.05),
-  gof_map = c("nobs", "r.squared")
+  gof_map = c("nobs", "r.squared"),
+  add_rows = ss_tibb
 )
 
 # tables/sth_ushouse_hdist.tex
-
-# Stata mode;
-# esttab, replace///
-#   style(tex) ///
-#   booktab ///
-#   label ///
-#   varwidth(30) ///
-#   mtitle("(1)" "(2)") ///
-#   nodepvars ///
-#   stats(fixed ymean ysd r2  N, ///
-#           fmt(%s 2 2 2  %6.0fc) ///
-#           labels("Fixed Effects by" "Average of Outcome" "Std. Dev. of Outcome" "R-squared" "Observations")) ///
-#   obslast nonumbers nonotes  ///
-#   starlevels(* 0.05) ///
-#   b(a2) se(a1)
