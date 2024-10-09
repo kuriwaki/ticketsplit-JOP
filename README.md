@@ -23,7 +23,9 @@ This will activate the package manager **renv** easily. Specifically:
         with the option of `Create from Version Control` \> `Git`, and
         this this URL <https://github.com/kuriwaki/ticketsplit-JOP>.
 2.  A new Project should open. Run `renv::restore()` to download the
-    necessary packages with their versions in one step.  
+    necessary packages with their versions in one step. When prompted if
+    you want to proceed with installing packages, enter “Y” (for yes) on
+    the R console.
 3.  Then, inside the Rstudio and renv environment, replicators can run
     the master script `00_replicate-ALL.R` or run each R script.
 
