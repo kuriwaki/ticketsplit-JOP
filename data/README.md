@@ -8,23 +8,15 @@ Here is an overview of the datasets and their variable names:
 # Parquet files
 
 .parquet files are large datasets and represent the main cast vote
-record data.
+record data. You will need the `arrow` package to read these files (see
+the overall README on that).
 
     ## ├── by-votechoice
+    ## │   └── part-0.parquet
     ## ├── by-person-ID
-    ## ├── maricopa
-    ## │   └── ballots_wide_party.csv.gz
-    ## └── palmbeach
-    ## |   └── herron_lewis_counts.csv.gz
+    ## │   └── part-0.parquet
     ## ├── maryland
-    ## │   ├── elec=2016
-    ## │   │   └── part-0.parquet
-    ## │   ├── elec=2018
-    ## │   │   └── part-0.parquet
-    ## │   ├── elec=2020
-    ## │   │   └── part-0.parquet
-    ## │   └── elec=2022
-    ## │       └── part-0.parquet
+    ## │   └── part-0.parquet
 
 `by-votechoice` is stored in long form where one row is a vote choice
 for a particular office.
@@ -57,9 +49,10 @@ for a particular office.
   Contest IDs for six offices.
 
 `maricopa`, `maryland`, and `palmbeach` are cast vote records from the
-three other states I examine in the paper. These are organized in wide
-format, so each row represents a voter instead of a choice on the long
-ballot. These are analyzed in scripts starting with `10_`.
+three other states I examine in the paper. Only `maryland` is a parquet;
+the two others are csvs. These are organized in wide format, so each row
+represents a voter instead of a choice on the long ballot. These are
+analyzed in scripts starting with `10_`.
 
 # CSV files
 
