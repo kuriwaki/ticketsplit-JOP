@@ -40,9 +40,9 @@ print_row <- function(office_use,
 }
 
 # Data ----
-office_bin <- read_csv("data/analysis-JOP/hist-elecs_by-office.csv",
+office_bin <- read_csv("data/hist-elecs_by-office.csv",
   col_types = "cciddd"
-) |> 
+) |>
   mutate(
     fpct_D = scales::number(pct_D, accuracy = 0.01),
     fn = formatC(n, format = "d", big.mark = ",")
