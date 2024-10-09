@@ -5,22 +5,25 @@ Shiro Kuriwaki
 This repository is a replication archive for the manuscript, “Ticket
 Splitting in a Nationalized Era”.
 
-Both a Dataverse version (<https://doi.org/10.7910/DVN/RXOZEZ>) and a
-Github version (<https://github.com/kuriwaki/ticketsplit-JOP>) are
-available. The dataverse version is not public until reviewed.
+Both a Dataverse version and a [Github
+version](https://github.com/kuriwaki/ticketsplit-JOP) are available.
 
 ## How to Replicate
 
-We strongly recommend downloading this entire repository and opening it
-as **a RStudio Project** (<https://posit.co/download/rstudio-desktop/>).
+I strongly recommend downloading this entire repository and opening it
+as **a [RStudio](https://posit.co/download/rstudio-desktop) Project**.
 This will activate the package manager **renv** easily. Specifically:
 
-1.  In RStudio, create a new Rstudio project from this repo
-    (<https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects>)
-    and select Create from `Version Control` \> `Git`, then enter this
-    URL <https://github.com/kuriwaki/ticketsplit-JOP>.
+1.  In RStudio, create a new Rstudio project.
+    1.  If you downloaded the packet from Dataverse, you can open the
+        `ticketsplit-JOP.Rproj` file.
+    2.  If you are starting from Github, start from your local RStudio
+        and create a [new
+        project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+        with the option of `Create from Version Control` \> `Git`, and
+        this this URL <https://github.com/kuriwaki/ticketsplit-JOP>.
 2.  A new Project should open. Run `renv::restore()` to download the
-    necessary packages and their versions in one step.  
+    necessary packages with their versions in one step.  
 3.  Then, inside the Rstudio and renv environment, replicators can run
     the master script `00_replicate-ALL.R` or run each R script.
 
@@ -46,8 +49,8 @@ B5.
     ## 15_fig-B7_uncontested.R            16_tab-B4_overtime-trend.R         
     ## 17_fig-C1_elbow-plots.R
 
-All scripts default to the project directory “ticketsplit-JOP” for its
-working directory.
+All scripts default to the project directory (e.g., “ticketsplit-JOP”,
+or where the `.Rproj` file is located) as its working directory.
 
 ## Datasets
 
@@ -60,8 +63,9 @@ package using the `open_dataset()` function. For a reference, see
 
 ## Packages and Dependencies (renv)
 
-This repository uses R. It uses the renv package
-(<https://rstudio.github.io/renv/>) to manage package versions. The
+This repository uses R. It uses the [renv
+package](https://rstudio.github.io/renv) to manage package versions, so
+that there are no internal inconsistencies on your computer The
 `renv.lock` file encodes all the necessary dependencies. Opening the
 project in Rstudio Projects will automatically register the lockfile
 (from the `.Rprofile`), and Rstudio Projects will ask if you want to
@@ -71,7 +75,7 @@ install missing packages. You can install the missing packages using
 to start this.
 
 For reference, here are the package dependencies across all scripts,
-from most used to least.
+from most used to least (renv will instlal these for you).
 
     ## Finding R package dependencies ... Done!
     ## c("tidyverse", "scales", "fs", "ticketsplitJOPpkg", "arrow", 
@@ -81,8 +85,8 @@ from most used to least.
 
 All packages are on CRAN except `ticketsplitJOPpkg`, which is a bundle
 of extra functions specific to this repository. It is available at
-<https://github.com/kuriwaki/ticketsplitJOPpkg> and can be installed
-with
+<https://github.com/kuriwaki/ticketsplitJOPpkg>. `renv` will install
+this for you, but it can also be manually installed with
 
 ``` r
 remotes::install_github("kuriwaki/ticketsplitJOPpkg")
